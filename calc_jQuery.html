@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator with jQuery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    
+    
+    <script>
+            $(document).ready(function(){
+                var data = ""
+                var display = ""
+              $(".num").click(function(){
+                  data = data + $(this).text();
+                  display = display + $(this).text()
+                  $(".display").text(display);
+              });  
+              $(".opr").click(function(){
+                  display = "0"
+                  $(".display").text(display)
+                  display = ""
+                  data = data + $(this).text()
+              })
+              $(".eql").click(function(){
+                  display = eval(data)
+                  $(".display").text(display)
+              })
+              $(".cancle").click(function(){
+                  data = ""
+                  display = "0"
+                  $(".display").text(display)
+                  display = ""
+              })
+            });
+    </script>
+</head>
+<body>
+    <div class="calculator">
+       <br>
+        <div class="row">
+            <div class="display">0</div>
+        </div>
+        <div class="row">
+            <div class="button cancle first">C</div>
+            <div class="button opr">CE</div>
+            <div class="button opr">Back</div>
+            <div class="button opr"><sup>+</sup>/<sub>-</sub></div>
+            <div class="button opr">%</div>
+        </div>
+        <div class="row">
+            <div class="button num first">7</div>
+            <div class="button num">8</div>
+            <div class="button num">9</div>
+            <div class="button opr">/</div>
+            <div class="button opr">sqr</div>
+        </div>
+        <div class="row">
+            <div class="button num first">4</div>
+            <div class="button num">5</div>
+            <div class="button num">6</div>
+            <div class="button opr">-</div>
+            <div class="button opr">1/x</div>
+        </div>
+        <div class="row">
+            <div class="button num first">1</div>
+            <div class="button num">2</div>
+            <div class="button num">3</div>
+            <div class="button opr">*</div>
+            <div class="button opr">Pi</div>
+        </div>
+        <div class="row">
+            <div class="button num first zero">0</div>
+            <div class="button num">.</div>
+            <div class="button opr">+</div>
+            <div class="button eql">=</div>
+        </div>
+        <div class="row">
+            <p class="credit">
+               <span class="left">
+                   Ver: 1.9v
+               </span>
+                <span class="right">
+                    Designed by: Sonu Kumar Thakur
+                </span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
